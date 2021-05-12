@@ -1,9 +1,9 @@
 <h1>Games</h1>
 
 <% @games.each do |game| %>
-<%= game.name %>
-<%= game.year_released %>
-<%= game.consoles %>
-<%= game.physical_release %>
-<%= game.esrb_rating %>
+<h3><%= game.name %></h3>
+<p>Year Released: <%= game.year_released %></p>
+<p>Console: <%= game.consoles %></p>
+<p>Physical Release: <%= game.physical_release %></p>
+<p>ESRB Rating: <%= game.esrb_rating %></p>
 <% end %>
