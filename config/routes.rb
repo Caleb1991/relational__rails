@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   get '/developers/:id', to: 'developers#show'
 
   get '/games', to: 'games#index'
+
+
+  get '/authors', to: 'authors#index'
+  get '/authors/:id', to: 'authors#show'
+
+  get '/books', to: 'books#index'
 end
