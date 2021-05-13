@@ -1,5 +1,7 @@
 <h1>All Authors</h1>
 
-<% @authors.each do |author| %>
+<% @authors.min_by do |author| %>
+  <% author.updated_at %>
   <h3><%= author.name %></h3>
+  <h4><%= (author.created_at).strftime("Created on: %m/%d/%Y") %></h4>
 <% end %>

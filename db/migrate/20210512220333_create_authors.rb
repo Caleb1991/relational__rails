@@ -4,7 +4,7 @@ class CreateAuthors < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :alive
       t.integer :age
-      t.timestamps
+      t.timestamps :created_at, :updated_at
     end
   end
 end
