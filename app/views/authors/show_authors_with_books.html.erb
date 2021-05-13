@@ -1,0 +1,9 @@
+<h1><%=@author.name%></h1>
+<ul>
+<li>Age: <%=@author.age%></li>
+<li>Alive?: <%=@author.alive%></li>
+</ul>
+
+<% @books.each do |book| %>
+  <h3><%= book.title %></h3>
+<% end %>
