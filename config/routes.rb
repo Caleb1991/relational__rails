@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/developers', to: 'developers#index'
   get '/developers/:id', to: 'developers#show'
+  get 'developers/:id/games', to: 'developers_games#index'
 
   get '/games', to: 'games#index'
   get '/games/:id', to: 'games#show'

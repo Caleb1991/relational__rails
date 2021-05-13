@@ -1,0 +1,9 @@
+<h1><%= @developer.name %></h1>
+
+<% @developer_games.each do |game| %>
+  <h3><%= game.name %></h3>
+  <p>Year Released: <%= game.year_released %></p>
+  <p>Consoles: <%= game.consoles %></p>
+  <p>Physical Release: <% game.physical_release %></p>
+  <p>ESRB Rating: <% game.esrb_rating %></p></br>
+<% end %>
