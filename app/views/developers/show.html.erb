@@ -1,3 +1,8 @@
+<%= link_to 'Developers', '/developers' %>
+<%= link_to 'Games', '/games' %>
+<%= link_to 'Games By Developer', "/developers/#{@developer.id}/games" %>
+
+
 <h1> <%= @developer.name %> </h1>
 
 <ul>
@@ -5,4 +10,5 @@
   <li> Still Active: <%= @developer.still_active %> </li>
   <li> City: <%= @developer.city %> </li>
   <li> Number Of Staff: <%= @developer.number_of_staff %> </li>
+  <li>Number of Games: <%= @developer.game_count %></li>
 </ul>
