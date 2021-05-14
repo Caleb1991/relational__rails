@@ -1,3 +1,7 @@
+<%= link_to 'Authors', '/authors' %>
+<%= link_to 'Books', '/books' %>
+<%= link_to 'Books By Author', "/authors/#{@author.id}/books" %>
+
 <h1>All Books</h1>
 
 <% @books.each do |book| %>

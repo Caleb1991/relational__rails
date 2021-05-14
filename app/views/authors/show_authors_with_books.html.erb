@@ -1,7 +1,12 @@
+<%= link_to 'Authors', '/authors' %>
+<%= link_to 'Books', '/books' %>
+<%= link_to 'Books By Author', "/authors/#{@author.id}/books" %>
+
 <h1><%=@author.name%></h1>
 <ul>
 <li>Age: <%=@author.age%></li>
 <li>Alive?: <%=@author.alive%></li>
+<li>Book Count: <%=@author.book_count%></li>
 </ul>
 
 <% @books.each do |book| %>

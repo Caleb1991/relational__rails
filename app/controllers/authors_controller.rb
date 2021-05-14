@@ -11,4 +11,10 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
     @books = Book.all.where(author: @author)
   end
+
+  def book_count
+    @author = Author.find(params[:id])
+    @books = Book.all.where(author: @author)
+    @books.count
+  end
 end
