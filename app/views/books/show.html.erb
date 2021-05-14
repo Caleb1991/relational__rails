@@ -2,9 +2,9 @@
 <%= link_to 'Books', '/books' %>
 <%= link_to 'Books By Author', "/authors/#{@author.id}/books" %>
 
-<h1><%=@author.name%></h1>
+<h1><%=@book.title%></h1>
 
 <ul>
-<li>Age: <%=@author.age%></li>
-<li>Alive?: <%=@author.alive%></li>
+<li>Series?: <%=@book.series%></li>
+<li>Page Count: <%=@book.page_count%></li>
 </ul>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get '/developers', to: 'developers#index'
   get '/developers/:id', to: 'developers#show'
-  get 'developers/:id/games', to: 'developers_games#index'
+  get '/developers/:id/games', to: 'developers_games#index'
 
   get '/games', to: 'games#index'
   get '/games/:id', to: 'games#show'
@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get '/authors', to: 'authors#index'
   get '/authors/:id', to: 'authors#show'
+  get '/authors/:id/books', to: 'authors#show_authors_with_books'
+
 
   get '/books', to: 'books#index'
+  get '/books/:id', to: 'books#show'
 end

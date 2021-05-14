@@ -2,6 +2,7 @@ Developer.destroy_all
 Game.destroy_all
 
 Author.destroy_all
+Book.destroy_all
 
 @developer_1 = Developer.create!(name: 'Bethesda', year_founded: 1986, still_active: true, city: 'Bethesda', number_of_staff: 420)
 @developer_2 = Developer.create!(name: 'Capcom', year_founded: 1979, still_active: true, city: 'Chuo Ward, Osaka', number_of_staff: 2832)
