@@ -9,10 +9,9 @@ RSpec.describe 'Developer Index Page' do
 
     visit "/developers"
   end
+
   it "I see the name of each parent record in the system" do
     expect(page).to have_content(@developer_1.name)
-    expect(page).to have_content(@developer_1.still_active)
-    expect(page).to have_content(@developer_1.city)
-    expect(page).to have_content(@developer_1.number_of_staff)
+    expect(page).to have_content(@developer_2.name)
   end
 end
