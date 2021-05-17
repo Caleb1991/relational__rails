@@ -12,11 +12,15 @@ RSpec.describe 'Authors Index Page' do
     visit "/authors"
   end
 
+  # user story 1
   it "displays each authors name" do
     expect(page).to have_content(@author_1.name)
+    expect(page).to have_content(@author_2.name)
   end
 
-  it "displays each authors name" do
-    expect(page).to have_content(@author_2.name)
+  # user story 6
+  it "displays each author by most recent " do
+    expect(page).to have_content((@author_1.created_at).strftime("Created on: %m/%d/%Y"))
+    expect(page).to have_content((@author_2.created_at).strftime("Created on: %m/%d/%Y"))
   end
 end
