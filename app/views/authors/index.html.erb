@@ -1,11 +1,11 @@
 <%= link_to 'Authors', '/authors' %>
 <%= link_to 'Books', '/books' %>
-<%= link_to 'Books By Author', "/authors/#{@author.id}/books" %>
 
 <h1>All Authors</h1>
 
 <% @authors.min_by do |author| %>
   <% author.created_at %>
+  <%= link_to 'Books By Author', "/authors/#{author.id}/books" %>
   <h3><%= author.name %></h3>
   <h4><%= (author.created_at).strftime("Created on: %m/%d/%Y") %></h4>
 <% end %>
