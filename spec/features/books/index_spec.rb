@@ -12,6 +12,7 @@ RSpec.describe 'Books Index Page' do
     visit "/books"
   end
 
+  # user story 3
   it "shows child and its attributes" do
       expect(page).to have_content(@book_1.title)
       expect(page).to have_content(@book_1.series)

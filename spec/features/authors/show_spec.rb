@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'Authors Index Page' do
+RSpec.describe 'Authors Show Page' do
   before :each do
     @author_1 = Author.create!(name: 'C.S. Lewis', alive: false, age: 64)
     @author_2 = Author.create!(name: 'Leigh Bardugo', alive: true, age: 46)
