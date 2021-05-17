@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/developers', to: 'developers#index'
+  get '/developers/new', to: 'developers#new'
+  post '/developers', to: 'developers#create'
   get '/developers/:id', to: 'developers#show'
   get '/developers/:id/games', to: 'developers_games#index'
 
