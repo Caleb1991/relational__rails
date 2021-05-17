@@ -1,0 +1,13 @@
+<%= form_with url: "developers/#{@developer.id}/games", method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :year_released %>
+<%= form.text_field :year_released %>
+<%= form.label :consoles %>
+<%= form.text_field :consoles %>
+<%= form.label :physical_release %>
+<%= form.text_field :physical_release %>
+<%= form.label :esrb_rating %>
+<%= form.text_field :esrb_rating %>
+<%= form.submit 'Create New Game' %>
+<% end %>

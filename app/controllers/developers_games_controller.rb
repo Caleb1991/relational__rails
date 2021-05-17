@@ -4,4 +4,7 @@ class DevelopersGamesController < ApplicationController
 
     @developer_games = @developer.games
   end
+
+  def new
+  end
 end

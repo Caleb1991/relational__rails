@@ -1,0 +1,14 @@
+<%= form_with url: "/developers/#{@developer.id}", method: :patch, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %></br>
+<%= form.label :year_founded %>
+<%= form.text_field :year_founded %></br>
+<%= form.label :still_active %>
+<%= form.text_field :still_active %></br>
+<%= form.label :city %>
+<%= form.text_field :city %></br>
+<%= form.label :number_of_staff %>
+<%= form.text_field :number_of_staff %></br>
+<%= form.submit 'Update Developer' %>
+
+<% end %>
