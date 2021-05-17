@@ -25,4 +25,14 @@ RSpec.describe 'Game Index Page' do
       expect(page).to have_content(@game_2.physical_release)
     end
   end
+
+  it 'has a link returning back to index page' do
+    visit '/developers'
+
+    expect(current_path).to eq('/developers')
+
+    click_on 'Games'
+
+    expect(current_path).to eq('/games')
+  end
 end
