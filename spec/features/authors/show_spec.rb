@@ -13,12 +13,13 @@ RSpec.describe 'Authors Index Page' do
     @id_2 = @author_2.id.to_s
   end
 
-  # user story 2
+  # user story 2 & 7
   it "displays author attributes" do
     visit "/authors/" + @id_1
     expect(page).to have_content(@author_1.name)
     expect(page).to have_content(@author_1.age)
     expect(page).to have_content(@author_1.alive)
+    expect(page).to have_content(@author_1.book_count)
   end
 
   it "displays author attributes" do
@@ -26,5 +27,6 @@ RSpec.describe 'Authors Index Page' do
     expect(page).to have_content(@author_2.name)
     expect(page).to have_content(@author_2.age)
     expect(page).to have_content(@author_2.alive)
+    expect(page).to have_content(@author_2.book_count)
   end
 end
