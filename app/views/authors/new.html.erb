@@ -1,0 +1,13 @@
+<%= link_to 'Authors', '/authors' %>
+<%= link_to 'Books', '/books' %>
+
+<h1>New Author</h1>
+<%= form_with url: '/authors', method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :alive %>
+<%= form.text_field :alive %>
+<%= form.label :age %>
+<%= form.text_field :age %>
+<%= form.submit 'Create Author' %>
+<% end %>
