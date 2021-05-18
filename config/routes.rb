@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/developers/new', to: 'developers#new'
   get '/developers/:id/games/new', to: 'developers_games#new'
   post '/developers', to: 'developers#create'
+  post '/developers/:id/games', to: 'developers_games#create'
   get '/developers/:id', to: 'developers#show'
   get '/developers/:id/games', to: 'developers_games#index'
   get '/developers/:id/edit', to: 'developers#edit'
