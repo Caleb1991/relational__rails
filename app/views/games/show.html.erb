@@ -1,5 +1,6 @@
 <%= link_to 'Developers', '/developers' %>
 <%= link_to 'Games', '/games' %>
+<%= link_to "Update #{@game.name}", "/games/#{@game.id}/edit" %>
 
 <h1><%= @game.name %></h1>
 
