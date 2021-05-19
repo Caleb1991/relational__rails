@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all.where(physical_release: true)
+    @games = Game.only_show_physical_releases
   end
 
   def show
@@ -22,7 +22,7 @@ class GamesController < ApplicationController
     game.delete
     redirect_to '/games'
   end
-  
+
   private
   def game_params
     params.permit(:name, :year_released, :consoles, :physical_release, :esrb_rating)
