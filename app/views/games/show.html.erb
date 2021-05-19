@@ -1,6 +1,7 @@
 <%= link_to 'Developers', '/developers' %>
 <%= link_to 'Games', '/games' %>
 <%= link_to "Update #{@game.name}", "/games/#{@game.id}/edit" %>
+<%= link_to "Delete #{@game.name}", "/games/#{@game.id}", method: :delete %>
 
 <h1><%= @game.name %></h1>
 

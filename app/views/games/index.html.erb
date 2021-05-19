@@ -9,5 +9,7 @@
   <p>Console: <%= game.consoles %></p>
   <p>Physical Release: <%= game.physical_release %></p>
   <p>ESRB Rating: <%= game.esrb_rating %></p>
+  <p><%= link_to "Edit #{game.name}", "/games/#{game.id}/edit" %></p>
+  <p><%= link_to "Delete #{game.name}", "/games/#{game.id}", method: :delete %></p>
 </section>
 <% end %>

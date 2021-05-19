@@ -4,5 +4,9 @@
 <h1>Developers:</h1>
 
 <% @developers.each do |developer| %>
-<h4><%= developer.name %> Created at: <%= developer.created_at %></h4>
+<h4><%= developer.name %>
+    Created at: <%= developer.created_at %>
+    <%= link_to "Edit #{developer.name}", "/developers/#{developer.id}/edit" %>
+    <%= link_to "Delete #{developer.name}", "/developers/#{developer.id}", method: :delete %>
+ </h4>
 <% end %>

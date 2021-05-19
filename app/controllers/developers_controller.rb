@@ -27,6 +27,11 @@ class DevelopersController < ApplicationController
     redirect_to "/developers/#{developer.id}"
   end
 
+  def destroy
+    developer = Developer.find(params[:id])
+    developer.delete
+    redirect_to '/developers'
+  end
 
   private
   def developer_params
