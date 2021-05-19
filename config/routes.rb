@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   get '/developers/:id/games', to: 'developers_games#index'
   get '/developers/:id/edit', to: 'developers#edit'
   patch '/developers/:id', to: 'developers#update'
+  delete '/developers/:id', to: 'developers#destroy'
+
 
   get '/games', to: 'games#index'
   get '/games/:id', to: 'games#show'
   get '/games/:id/edit', to: 'games#edit'
   patch '/games/:id', to: 'games#update'
+  delete '/games/:id', to: 'games#destroy'
 
 
   get '/authors', to: 'authors#index'

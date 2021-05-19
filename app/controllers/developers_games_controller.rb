@@ -3,6 +3,9 @@ class DevelopersGamesController < ApplicationController
     @developer = Developer.find(params[:id])
 
     @developer_games = @developer.games
+    if params.include?('sort')
+      @developer_games.order(:name)
+    end
   end
 
   def new

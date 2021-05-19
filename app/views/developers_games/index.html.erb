@@ -1,6 +1,7 @@
 <%= link_to 'Developers', '/developers' %>
 <%= link_to 'Games', '/games' %>
 <%= link_to 'Create Game', "/developers/#{@developer.id}/games/new" %>
+<%= link_to "Sort Alphabetically", "/developers/#{@developer.id}/games?sort=true" %>
 
 <h1><%= @developer.name %></h1>
 
@@ -9,5 +10,7 @@
   <p>Year Released: <%= game.year_released %></p>
   <p>Consoles: <%= game.consoles %></p>
   <p>Physical Release: <%= game.physical_release %></p>
-  <p>ESRB Rating: <%= game.esrb_rating %></p></br>
+  <p>ESRB Rating: <%= game.esrb_rating %></p>
+  <p><%= link_to "Edit #{game.name}", "/games/#{game.id}/edit" %></p>
+  <p><%= link_to "Delete #{game.name}", "/games/#{game.id}", method: :delete %></p>
 <% end %>
