@@ -26,13 +26,31 @@ RSpec.describe 'Game Index Page' do
     end
   end
 
-  it 'has a link returning back to index page' do
-    visit '/developers'
-
-    expect(current_path).to eq('/developers')
-
-    click_on 'Games'
+  it 'has a link returning back to the developers index page' do
+    visit '/games'
 
     expect(current_path).to eq('/games')
+
+    click_on 'Developers'
+
+    expect(current_path).to eq('/developers')
+  end
+
+  it 'has link to its edit page' do
+    visit '/games'
+
+    click_on "Edit #{@game_1.name}"
+
+    expect(current_path).to eq("/games/#{@game_1.id}/edit")
+  end
+
+  it 'can delete games' do
+    visit '/games'
+
+    expect(page).to have_content(@game_1.name)
+
+    click_on "Delete #{@game_1.name}"
+
+    expect(page).to_not have_content(@game_1.name)
   end
 end

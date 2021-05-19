@@ -15,13 +15,29 @@ RSpec.describe 'Developer Index Page' do
     expect(page).to have_content(@developer_2.name)
   end
 
-  it 'has a link on every page returning back to this page' do
-    visit '/games'
+  it 'has a link to games' do
+    click_on 'Games'
 
     expect(current_path).to eq('/games')
+  end
 
-    click_on 'Developers'
+  it 'has a link to create a new developer' do
+    click_on 'New Developer'
 
-    expect(current_path).to eq('/developers')
+    expect(current_path).to eq('/developers/new')
+  end
+
+  it 'has a link to edit a developer' do
+    click_on "Edit #{@developer_1.name}"
+
+    expect(current_path).to eq("/developers/#{@developer_1.id}/edit")
+  end
+
+  xit 'has a link to delete a developer' do
+    expect(page).to have_content(@developer_1.name)
+
+    click_on "Delete #{@developer_1.name}"
+
+    expect(page).to_not have_content(@developer_1.name)
   end
 end

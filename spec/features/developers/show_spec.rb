@@ -37,4 +37,25 @@ end
     expect(current_path).to eq("/developers/#{@developer_1.id}/games")
     expect(page).to have_content(@game_1.name)
   end
+
+  it 'has a link to update the developer' do
+    visit "/developers/#{@developer_1.id}"
+
+    click_on('Update Developer')
+
+    expect(current_path).to eq("/developers/#{@developer_1.id}/edit")
+  end
+
+  xit 'can delete the developer' do
+    visit '/developers'
+
+    expect(page).to have_content(@developer_1.name)
+
+    visit "/developers/#{@developer_1.id}"
+
+    click_on "Delete #{@developer_1.name}"
+
+    expect(current_path).to eq('/developers')
+    expect(page).to_not have_content(@developer_1.name)
+  end
 end
