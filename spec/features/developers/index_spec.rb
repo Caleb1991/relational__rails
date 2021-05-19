@@ -33,9 +33,8 @@ RSpec.describe 'Developer Index Page' do
     expect(current_path).to eq("/developers/#{@developer_1.id}/edit")
   end
 
-  xit 'has a link to delete a developer' do
+  it 'has a link to delete a developer' do
     expect(page).to have_content(@developer_1.name)
-
     click_on "Delete #{@developer_1.name}"
 
     expect(page).to_not have_content(@developer_1.name)

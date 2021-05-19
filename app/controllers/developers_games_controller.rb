@@ -1,10 +1,11 @@
 class DevelopersGamesController < ApplicationController
   def index
     @developer = Developer.find(params[:id])
-    @developer_games = @developer.games
 
     if params[:sort] == 'true'
-      @developer_games.order(:name)
+      @developer_games = @developer.games.order(:name)
+    else
+      @developer_games = @developer.games
     end
   end
 

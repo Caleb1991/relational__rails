@@ -67,7 +67,7 @@ RSpec.describe 'Developers Associated Games' do
     visit "/developers/#{@developer_1.id}/games"
 
     click_on 'Sort Alphabetically'
-
+    binding.pry
     expect(current_path).to eq("/developers/#{@developer_1.id}/games?sort=true")
   end
 
