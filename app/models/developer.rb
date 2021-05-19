@@ -4,4 +4,8 @@ class Developer < ApplicationRecord
   def game_count
     games.count
   end
+
+  def self.order_by_created
+    all.order(created_at: :desc)
+  end
 end
