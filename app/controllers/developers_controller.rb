@@ -29,7 +29,7 @@ class DevelopersController < ApplicationController
 
   def destroy
     developer = Developer.find(params[:id])
-    developer.delete
+    developer.destroy
     redirect_to '/developers'
   end
 

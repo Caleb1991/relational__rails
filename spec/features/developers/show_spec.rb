@@ -46,7 +46,7 @@ end
     expect(current_path).to eq("/developers/#{@developer_1.id}/edit")
   end
 
-  xit 'can delete the developer' do
+  it 'can delete the developer' do
     visit '/developers'
 
     expect(page).to have_content(@developer_1.name)
