@@ -3,6 +3,7 @@
 <%= link_to 'Create Game', "/developers/#{@developer.id}/games/new" %>
 <%= link_to "Sort Alphabetically", "/developers/#{@developer.id}/games?sort=true" %>
 
+
 <h1><%= @developer.name %></h1>
 
 <% @developer_games.each do |game| %>
@@ -13,4 +14,10 @@
   <p>ESRB Rating: <%= game.esrb_rating %></p>
   <p><%= link_to "Edit #{game.name}", "/games/#{game.id}/edit" %></p>
   <p><%= link_to "Delete #{game.name}", "/games/#{game.id}", method: :delete %></p>
+<% end %>
+
+<%= form_with url: "/developers/#{@developer.id}/games?return_only_specified=", method: :get, local: true do |form|%>
+<%= form.label :user_number, "Return Games Released After:" %>
+<%= form.text_field :user_number %>
+<%= form.submit 'Enter' %>
 <% end %>

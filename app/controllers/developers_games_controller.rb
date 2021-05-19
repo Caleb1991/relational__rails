@@ -2,8 +2,10 @@ class DevelopersGamesController < ApplicationController
   def index
     @developer = Developer.find(params[:id])
 
-    if params[:sort] == 'true'
-      @developer_games = @developer.games.order(:name)
+    if params[:user_number].nil? == false
+      @developer_games = @developer.released_after(params[:user_number])
+    elsif params[:sort] == 'true'
+      @developer_games = @developer.order_by_name
     else
       @developer_games = @developer.games
     end
