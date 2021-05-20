@@ -27,10 +27,10 @@ class AuthorsController < ApplicationController
     redirect_to '/authors'
   end
 
-  def update
-    Author.update(author_params)
-    redirect_to '/authors'
-  end
+  # def update
+  #   Author.update(author_params)
+  #   redirect_to '/authors'
+  # end
 
   private
   def author_params
