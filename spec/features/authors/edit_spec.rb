@@ -19,11 +19,12 @@ RSpec.describe 'Authors Edit Page' do
   end
 
   it 'can edit a author' do
-    visit "/authors/#{Author.last.id}/edit"
+    visit "/authors/#{@author_1.id}/edit"
 
+    expect(page).to have_content("Name")
     click_on("Edit Author")
 
-    fill_in("Name", with: 'Edward')
+    fill_in "Name", with: 'Edward'
 
     click_on 'Edit Author'
 
