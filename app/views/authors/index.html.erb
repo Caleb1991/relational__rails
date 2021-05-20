@@ -8,5 +8,6 @@
   <% author.created_at %>
   <h3><%= author.name %></h3>
   <h4><%= (author.created_at).strftime("Created on: %m/%d/%Y") %></h4>
-  <%= link_to 'Edit Author', "/authors/#{author.id}/edit", method: "patch", id: "edit_author_#{author.id}" %>
+  <%= link_to "Edit #{author.name}", "/authors/#{author.id}/edit" %>
+  <%= link_to "Delete #{author.name}", "/authors/#{author.id}", method: :delete %>
 <% end %>

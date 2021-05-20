@@ -24,29 +24,28 @@ RSpec.describe 'Authors Index Page' do
     expect(page).to have_content((@author_2.created_at).strftime("Created on: %m/%d/%Y"))
   end
 
-  # user story 11
-  it "can has a link to add a new author" do
-    click_link 'Create New Author'
+    it 'has a link to books' do
+    click_on 'Books'
+
+    expect(current_path).to eq('/books')
+  end
+
+  it 'has a link to create a new author' do
+    click_on 'Create New Author'
+
     expect(current_path).to eq('/authors/new')
   end
 
-  it "can create a new author" do
-    visit '/authors/new'
+  it 'has a link to edit a author' do
+    click_on "Edit #{@author_1.name}"
 
-    fill_in("Name", with: 'Emmy')
-    fill_in("Alive", with: true)
-    fill_in("Age", with: 19)
-
-    click_button 'Create Author'
-    new_author_id = Author.last.id
-    expect(current_path).to eq('/authors')
-    expect(page).to have_content('Emmy')
-    visit "/authors/#{new_author_id}"
-    expect(page).to have_content(true)
+    expect(current_path).to eq("/authors/#{@author_1.id}/edit")
   end
 
-  it "has a edit link to edit author" do
-    page.find(:id, "edit_author_#{Author.last.id}").click
-    expect(current_path).to eq("/authors/#{Author.last.id}/edit")
-  end
+  # it 'has a link to delete a author' do
+  #   expect(page).to have_content(@author_1.name)
+  #   click_on "Delete #{@author_1.name}"
+
+  #   expect(page).to_not have_content(@author_1.name)
+  # end
 end

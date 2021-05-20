@@ -1,6 +1,8 @@
 <%= link_to 'Authors', '/authors' %>
 <%= link_to 'Books', '/books' %>
 <%= link_to 'Books By Author', "/authors/#{@author.id}/books" %>
+<%= link_to 'Update Author', "/authors/#{@author.id}/edit" %>
+<%= link_to "Delete #{@author.name}", "/authors/#{@author.id}", method: :delete %>
 
 <h1><%=@author.name%></h1>
 
