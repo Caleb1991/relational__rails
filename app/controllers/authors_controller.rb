@@ -27,8 +27,19 @@ class AuthorsController < ApplicationController
     redirect_to '/authors'
   end
 
-  # def update
-  #   Author.update(author_params)
+  def edit
+    @author = Author.find(params[:id])
+  end
+
+  def update
+    author = Author.find(params[:id])
+    author.update(author_params)
+    redirect_to "/authors/#{author.id}"
+  end
+
+  # def destroy
+  #   author = Author.find(params[:id])
+  #   author.destroy
   #   redirect_to '/authors'
   # end
 
